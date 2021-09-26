@@ -1,5 +1,4 @@
 // followed along with the lighthouse labs instructions. added some klingon for interest
-
 const { fetchMyIP } = require('./iss');
 
 fetchMyIP((error, ip) => {
@@ -35,7 +34,7 @@ fetchISSFlyOverTimes(exampleCoords, (error, passTimes) => {
   console.log('Qapla!! Returned the flyover times:' , passTimes);
 });
 
-const printPasstimes = function(passTimes) {
+const printPassTimes = function(passTimes) {
   for (const pass of passTimes) {
     const datetime = new Date(0);
     datetime.setUTCSeconds(pass.risetime);
@@ -51,5 +50,7 @@ nextISSTimesForMyLocation((error, passTimes) => {
     return console.log("It didn't work!", error);
   }
   // success, print out the deets!
-  printPasstimes(passTimes);
+  printPassTimes(passTimes);
 });
+
+module.exports = printPassTimes;
